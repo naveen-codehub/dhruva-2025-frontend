@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container text-center mt-5">
+    <h2>Welcome, <span id="username"></span>!</h2>
+    <button class="btn btn-danger mt-3" id="logout">Logout</button>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const user = localStorage.getItem("user");
+        if (!user) {
+            window.location.href = "index.html";
+        }
+        document.getElementById("username").innerText = JSON.parse(user).name;
+
+        document.getElementById("logout").addEventListener("click", function () {
+            localStorage.removeItem("user");
+            window.location.href = "index.html";
+        });
+    });
+</script>
+</body>
+</html>
