@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const email = document.getElementById("loginEmail").value;
         const password = document.getElementById("loginPassword").value;
 
-        fetch("http://127.0.0.1:8000/api/login", {
+        fetch("https://dhurva-2025-backend-main-lerv0y.laravel.cloud/api/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password }),
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const email = document.getElementById("signupEmail").value;
         const password = document.getElementById("signupPassword").value;
 
-        fetch("http://127.0.0.1:8000/api/signup", {
+        fetch("https://dhurva-2025-backend-main-lerv0y.laravel.cloud/api/signup", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ name, email, password }),
